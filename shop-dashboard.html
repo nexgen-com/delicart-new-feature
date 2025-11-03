@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,32 +29,28 @@
             </div>
             <nav class="flex-1 py-4 px-6 space-y-2">
                 <a href="shop-dashboard.html" class="flex items-center px-4 py-3 text-white bg-primary rounded-lg">
-                    <span class="mr-3">📊</span>
+                    <i class="fas fa-chart-line mr-3"></i>
                     Dashboard
                 </a>
                 <a href="shop-products-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <span class="mr-3">📦</span>
+                    <i class="fas fa-box mr-3"></i>
                     Sản phẩm
                 </a>
                 <a href="shop-orders-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <span class="mr-3">🛒</span>
+                    <i class="fas fa-shopping-cart mr-3"></i>
                     Đơn hàng
                 </a>
                 <a href="shop-customers-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <span class="mr-3">👥</span>
+                    <i class="fas fa-users mr-3"></i>
                     Khách hàng
                 </a>
                 <a href="shop-profile-settings.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <span class="mr-3">⚙️</span>
+                    <i class="fas fa-cog mr-3"></i>
                     Cài đặt
                 </a>
                 <a href="notices-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <span class="mr-3">📢</span>
+                    <i class="fas fa-bullhorn mr-3"></i>
                     Thông báo
-                </a>
-                <a href="login.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <span class="mr-3">🚪</span>
-                    Đăng xuất
                 </a>
             </nav>
         </div>
@@ -95,7 +92,7 @@
                             <p class="text-gray-500 text-sm font-medium">Tổng số Shop</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">1</p>
                         </div>
-                        <div class="text-4xl text-primary opacity-20">🏪</div>
+                        <i class="fas fa-store text-4xl text-primary opacity-20"></i>
                     </div>
                 </div>
 
@@ -106,7 +103,7 @@
                             <p class="text-gray-500 text-sm font-medium">Tổng số Orders</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">156</p>
                         </div>
-                        <div class="text-4xl text-accent opacity-20">📦</div>
+                        <i class="fas fa-box text-4xl text-accent opacity-20"></i>
                     </div>
                 </div>
 
@@ -117,7 +114,7 @@
                             <p class="text-gray-500 text-sm font-medium">Tổng số Khách hàng</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">89</p>
                         </div>
-                        <div class="text-4xl text-primary opacity-20">👥</div>
+                        <i class="fas fa-users text-4xl text-primary opacity-20"></i>
                     </div>
                 </div>
 
@@ -128,7 +125,7 @@
                             <p class="text-gray-500 text-sm font-medium">Tổng số Notices</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">12</p>
                         </div>
-                        <div class="text-4xl text-accent opacity-20">📢</div>
+                        <i class="fas fa-bullhorn text-4xl text-accent opacity-20"></i>
                     </div>
                 </div>
             </div>
@@ -152,26 +149,80 @@
                             </div>
                             <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
                         </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Order #12343</p>
+                                <p class="text-sm text-gray-500">Khách hàng: Lê Văn C - 5 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Order #12342</p>
+                                <p class="text-sm text-gray-500">Khách hàng: Phạm Thị D - 8 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Order #12341</p>
+                                <p class="text-sm text-gray-500">Khách hàng: Hoàng Văn E - 12 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-6">
+                        <a href="shop-orders-list.html" class="inline-flex items-center px-6 py-2 text-[#f17224] hover:text-[#f17224]/80 transition font-medium">
+                            Xem tất cả đơn hàng
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Sản phẩm bán chạy</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Khách hàng mới nhất</h3>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
-                                <p class="font-medium text-gray-800">Sản phẩm A</p>
-                                <p class="text-sm text-gray-500">Đã bán: 45 sản phẩm</p>
+                                <p class="font-medium text-gray-800">Nguyễn Văn A</p>
+                                <p class="text-sm text-gray-500">Đăng ký: 2 giờ trước</p>
                             </div>
-                            <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Hot</span>
+                            <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Mới</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
-                                <p class="font-medium text-gray-800">Sản phẩm B</p>
-                                <p class="text-sm text-gray-500">Đã bán: 32 sản phẩm</p>
+                                <p class="font-medium text-gray-800">Trần Thị B</p>
+                                <p class="text-sm text-gray-500">Đăng ký: 5 giờ trước</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Bán chạy</span>
+                            <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Mới</span>
                         </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Lê Văn C</p>
+                                <p class="text-sm text-gray-500">Đăng ký: 8 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Phạm Thị D</p>
+                                <p class="text-sm text-gray-500">Đăng ký: 12 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Hoàng Văn E</p>
+                                <p class="text-sm text-gray-500">Đăng ký: 1 ngày trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-6">
+                        <a href="shop-orders-list.html" class="inline-flex items-center px-6 py-2 text-[#f17224] hover:text-[#f17224]/80 transition font-medium">
+                            Xem tất khách hàng
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
