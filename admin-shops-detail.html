@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Shop - Administrator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-main': '#FFFBEA',
+                        'primary': '#F17225',
+                        'accent': '#FFB347',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-main min-h-screen">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg">
+        <div class="h-full flex flex-col">
+            <div class="h-20 py-4 px-6 border-b flex items-center">
+                <h1 class="text-2xl font-bold text-primary">Delicart Lunch</h1>
+            </div>
+            <nav class="flex-1 py-4 px-6 space-y-2">
+                <a href="admin-dashboard.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-shops-list.html" class="flex items-center px-4 py-3 text-white bg-primary rounded-lg">
+                    <span class="mr-3">🏪</span>
+                    Quản lý Shop
+                </a>
+                <a href="notices-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">📢</span>
+                    Thông báo
+                </a>
+                <a href="login.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">🚪</span>
+                    Đăng xuất
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64">
+        <!-- Header -->
+        <header class="bg-white border-b">
+            <div class="h-20 px-8 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="admin-shops-edit.html" class="bg-accent text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition">
+                        Sửa
+                    </a>
+                    <a href="admin-shops-list.html" class="text-gray-600 hover:text-primary">← Quay lại</a>
+                </div>
+                <!-- Dropdown profile -->
+                <div class="relative" id="profileDropdown">
+                    <button onclick="toggleProfileDropdown()" class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
+                            A
+                        </div>
+                        <span class="text-gray-700 font-medium">Administrator</span>
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cập nhật profile</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Đổi mật khẩu</a>
+                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-8">
+            <div class="bg-white rounded-lg shadow-md p-8 max-w-4xl">
+                <div class="mb-6 pb-6 border-b">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Shop ABC</h3>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">Hoạt động</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-500 mb-1">ID</label>
+                        <p class="text-lg text-gray-800">1</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-500 mb-1">Email</label>
+                        <p class="text-lg text-gray-800">abc@example.com</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-500 mb-1">Số điện thoại</label>
+                        <p class="text-lg text-gray-800">0123456789</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-500 mb-1">Ngày tạo</label>
+                        <p class="text-lg text-gray-800">01/01/2024</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-500 mb-1">Địa chỉ</label>
+                    <p class="text-lg text-gray-800">123 Đường ABC, Quận 1, TP.HCM</p>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-500 mb-1">Mô tả</label>
+                    <p class="text-lg text-gray-800">Shop chuyên bán đồ ăn nhanh và đồ uống tươi ngon. Phục vụ 24/7.</p>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-sm text-gray-500 mb-1">Tổng số Orders</p>
+                        <p class="text-2xl font-bold text-primary">156</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-sm text-gray-500 mb-1">Tổng số Khách hàng</p>
+                        <p class="text-2xl font-bold text-primary">89</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p class="text-sm text-gray-500 mb-1">Tổng số Sản phẩm</p>
+                        <p class="text-2xl font-bold text-primary">45</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleProfileDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeProfileDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.add('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('profileDropdown');
+            const menu = document.getElementById('profileMenu');
+            if (!dropdown.contains(event.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

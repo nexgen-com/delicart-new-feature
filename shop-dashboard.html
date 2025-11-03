@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-main': '#FFFBEA',
+                        'primary': '#F17225',
+                        'accent': '#FFB347',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-main min-h-screen">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg">
+        <div class="h-full flex flex-col">
+            <div class="h-20 py-4 px-6 border-b flex items-center">
+                <h1 class="text-2xl font-bold text-primary">Delicart Lunch</h1>
+            </div>
+            <nav class="flex-1 py-4 px-6 space-y-2">
+                <a href="shop-dashboard.html" class="flex items-center px-4 py-3 text-white bg-primary rounded-lg">
+                    <span class="mr-3">📊</span>
+                    Dashboard
+                </a>
+                <a href="shop-products-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">📦</span>
+                    Sản phẩm
+                </a>
+                <a href="shop-orders-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">🛒</span>
+                    Đơn hàng
+                </a>
+                <a href="shop-customers-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">👥</span>
+                    Khách hàng
+                </a>
+                <a href="shop-profile-settings.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">⚙️</span>
+                    Cài đặt
+                </a>
+                <a href="notices-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">📢</span>
+                    Thông báo
+                </a>
+                <a href="login.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">🚪</span>
+                    Đăng xuất
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64">
+        <!-- Header -->
+        <header class="bg-white border-b">
+            <div class="h-20 px-8 py-4 flex items-center justify-end">
+                <!-- Dropdown profile -->
+                <div class="relative" id="profileDropdown">
+                    <button onclick="toggleProfileDropdown()" class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
+                            S
+                        </div>
+                        <span class="text-gray-700 font-medium">Shop ABC</span>
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cập nhật profile</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Đổi mật khẩu</a>
+                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="p-8">
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Total Shops -->
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Tổng số Shop</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">1</p>
+                        </div>
+                        <div class="text-4xl text-primary opacity-20">🏪</div>
+                    </div>
+                </div>
+
+                <!-- Total Orders -->
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-accent">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Tổng số Orders</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">156</p>
+                        </div>
+                        <div class="text-4xl text-accent opacity-20">📦</div>
+                    </div>
+                </div>
+
+                <!-- Total Customers -->
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Tổng số Khách hàng</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">89</p>
+                        </div>
+                        <div class="text-4xl text-primary opacity-20">👥</div>
+                    </div>
+                </div>
+
+                <!-- Total Notices -->
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-accent">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Tổng số Notices</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">12</p>
+                        </div>
+                        <div class="text-4xl text-accent opacity-20">📢</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Orders gần đây</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Order #12345</p>
+                                <p class="text-sm text-gray-500">Khách hàng: Nguyễn Văn A - 1 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-primary text-white text-xs rounded-full">Mới</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Order #12344</p>
+                                <p class="text-sm text-gray-500">Khách hàng: Trần Thị B - 3 giờ trước</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Sản phẩm bán chạy</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Sản phẩm A</p>
+                                <p class="text-sm text-gray-500">Đã bán: 45 sản phẩm</p>
+                            </div>
+                            <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Hot</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-800">Sản phẩm B</p>
+                                <p class="text-sm text-gray-500">Đã bán: 32 sản phẩm</p>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Bán chạy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleProfileDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeProfileDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.add('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('profileDropdown');
+            const menu = document.getElementById('profileMenu');
+            if (!dropdown.contains(event.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Shop - Administrator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-main': '#FFFBEA',
+                        'primary': '#F17225',
+                        'accent': '#FFB347',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-main min-h-screen">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg">
+        <div class="h-full flex flex-col">
+            <div class="h-20 py-4 px-6 border-b flex items-center">
+                <h1 class="text-2xl font-bold text-primary">Delicart Lunch</h1>
+            </div>
+            <nav class="flex-1 py-4 px-6 space-y-2">
+                <a href="admin-dashboard.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-shops-list.html" class="flex items-center px-4 py-3 text-white bg-primary rounded-lg">
+                    <span class="mr-3">🏪</span>
+                    Quản lý Shop
+                </a>
+                <a href="notices-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">📢</span>
+                    Thông báo
+                </a>
+                <a href="login.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <span class="mr-3">🚪</span>
+                    Đăng xuất
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64">
+        <!-- Header -->
+        <header class="bg-white border-b">
+            <div class="h-20 px-8 py-4 flex items-center justify-end">
+                <!-- Dropdown profile -->
+                <div class="relative" id="profileDropdown">
+                    <button onclick="toggleProfileDropdown()" class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
+                            A
+                        </div>
+                        <span class="text-gray-700 font-medium">Administrator</span>
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cập nhật profile</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Đổi mật khẩu</a>
+                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-8">
+            <!-- Filter Section -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tìm kiếm</label>
+                        <input 
+                            type="text" 
+                            placeholder="Tên shop, email..."
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+                        >
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Trạng thái</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
+                            <option value="">Tất cả</option>
+                            <option value="active">Hoạt động</option>
+                            <option value="inactive">Tạm dừng</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition">
+                            Tìm kiếm
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tên Shop</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Trạng thái</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ngày tạo</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Shop ABC</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">abc@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Hoạt động</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">01/01/2024</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="admin-shops-detail.html" class="text-primary hover:text-opacity-80 mr-3">Chi tiết</a>
+                                    <a href="admin-shops-edit.html" class="text-accent hover:text-opacity-80 mr-3">Sửa</a>
+                                    <button class="text-red-600 hover:text-opacity-80 mr-3">Xóa</button>
+                                    <button class="text-primary hover:text-opacity-80">Proxy Login</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Shop XYZ</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">xyz@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Hoạt động</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">02/01/2024</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="admin-shops-detail.html" class="text-primary hover:text-opacity-80 mr-3">Chi tiết</a>
+                                    <a href="admin-shops-edit.html" class="text-accent hover:text-opacity-80 mr-3">Sửa</a>
+                                    <button class="text-red-600 hover:text-opacity-80 mr-3">Xóa</button>
+                                    <button class="text-primary hover:text-opacity-80">Proxy Login</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">3</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Shop 123</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">shop123@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Tạm dừng</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">03/01/2024</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="admin-shops-detail.html" class="text-primary hover:text-opacity-80 mr-3">Chi tiết</a>
+                                    <a href="admin-shops-edit.html" class="text-accent hover:text-opacity-80 mr-3">Sửa</a>
+                                    <button class="text-red-600 hover:text-opacity-80 mr-3">Xóa</button>
+                                    <button class="text-primary hover:text-opacity-80">Proxy Login</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                    <div class="text-sm text-gray-500">
+                        Hiển thị <span class="font-medium">1</span> đến <span class="font-medium">10</span> của <span class="font-medium">125</span> shop
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-50">Trước</button>
+                        <button class="px-3 py-2 bg-primary text-white rounded-lg text-sm">1</button>
+                        <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-50">2</button>
+                        <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-50">3</button>
+                        <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-50">Sau</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleProfileDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeProfileDropdown() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.add('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('profileDropdown');
+            const menu = document.getElementById('profileMenu');
+            if (!dropdown.contains(event.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
