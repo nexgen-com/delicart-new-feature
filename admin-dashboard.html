@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Administrator</title>
+    <title>ダッシュボード - 管理者</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,11 +36,11 @@
                 </a>
                 <a href="admin-shops-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
                     <i class="fas fa-store mr-3"></i>
-                    Quản lý Shop
+                    ショップ管理
                 </a>
                 <a href="admin-notice-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
                     <i class="fas fa-bullhorn mr-3"></i>
-                    Thông báo
+                    お知らせ
                 </a>
             </nav>
         </div>
@@ -63,9 +63,9 @@
                         </svg>
                     </button>
                     <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-user-edit mr-2"></i>Cập nhật profile</a>
-                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-key mr-2"></i>Đổi mật khẩu</a>
-                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-right-from-bracket mr-2"></i>Đăng xuất</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-user-edit mr-2"></i>プロフィール更新</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-key mr-2"></i>パスワード変更</a>
+                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-right-from-bracket mr-2"></i>ログアウト</a>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm font-medium">Tổng số Shop</p>
+                            <p class="text-gray-500 text-sm font-medium">ショップ総数</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">125</p>
                         </div>
                         <i class="fas fa-store text-4xl text-primary opacity-20"></i>
@@ -90,7 +90,7 @@
                 <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-accent">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm font-medium">Tổng số Orders</p>
+                            <p class="text-gray-500 text-sm font-medium">注文総数</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">1,234</p>
                         </div>
                         <i class="fas fa-box text-4xl text-accent opacity-20"></i>
@@ -101,7 +101,7 @@
                 <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm font-medium">Tổng số Users</p>
+                            <p class="text-gray-500 text-sm font-medium">ユーザー総数</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">89</p>
                         </div>
                         <i class="fas fa-users text-4xl text-primary opacity-20"></i>
@@ -112,7 +112,7 @@
                 <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-accent">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-500 text-sm font-medium">Tổng số Notices</p>
+                            <p class="text-gray-500 text-sm font-medium">お知らせ総数</p>
                             <p class="text-3xl font-bold text-gray-800 mt-2">45</p>
                         </div>
                         <i class="fas fa-bullhorn text-4xl text-accent opacity-20"></i>
@@ -123,94 +123,94 @@
             <!-- Recent Activity -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Shop mới nhất</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">最新のショップ</h3>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Shop ABC</p>
-                                <p class="text-sm text-gray-500">Đăng ký: 2 giờ trước</p>
+                                <p class="text-sm text-gray-500">登録: 2時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Mới</span>
+                            <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">新規</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Shop XYZ</p>
-                                <p class="text-sm text-gray-500">Đăng ký: 5 giờ trước</p>
+                                <p class="text-sm text-gray-500">登録: 5時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">アクティブ</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Shop DEF</p>
-                                <p class="text-sm text-gray-500">Đăng ký: 8 giờ trước</p>
+                                <p class="text-sm text-gray-500">登録: 8時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">アクティブ</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Shop GHI</p>
-                                <p class="text-sm text-gray-500">Đăng ký: 12 giờ trước</p>
+                                <p class="text-sm text-gray-500">登録: 12時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">アクティブ</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Shop JKL</p>
-                                <p class="text-sm text-gray-500">Đăng ký: 1 ngày trước</p>
+                                <p class="text-sm text-gray-500">登録: 1日前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Hoạt động</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">アクティブ</span>
                         </div>
                     </div>
                     <div class="flex justify-center mt-6">
                         <a href="admin-shops-list.html" class="inline-flex items-center px-6 py-2 text-[#f17224] hover:text-[#f17224]/80 transition font-medium">
-                            Xem tất cả shop
+                            すべてのショップを表示
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Orders gần đây</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">最近の注文</h3>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Order #12345</p>
-                                <p class="text-sm text-gray-500">Shop ABC - 1 giờ trước</p>
+                                <p class="text-sm text-gray-500">Shop ABC - 1時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-primary text-white text-xs rounded-full">Mới</span>
+                            <span class="px-3 py-1 bg-primary text-white text-xs rounded-full">新規</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Order #12344</p>
-                                <p class="text-sm text-gray-500">Shop XYZ - 3 giờ trước</p>
+                                <p class="text-sm text-gray-500">Shop XYZ - 3時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">処理済み</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Order #12343</p>
-                                <p class="text-sm text-gray-500">Shop DEF - 5 giờ trước</p>
+                                <p class="text-sm text-gray-500">Shop DEF - 5時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">処理済み</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Order #12342</p>
-                                <p class="text-sm text-gray-500">Shop GHI - 8 giờ trước</p>
+                                <p class="text-sm text-gray-500">Shop GHI - 8時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">処理済み</span>
                         </div>
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
                                 <p class="font-medium text-gray-800">Order #12341</p>
-                                <p class="text-sm text-gray-500">Shop JKL - 12 giờ trước</p>
+                                <p class="text-sm text-gray-500">Shop JKL - 12時間前</p>
                             </div>
-                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">Đã xử lý</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">処理済み</span>
                         </div>
                     </div>
                     <div class="flex justify-center mt-6">
                         <a href="#" class="inline-flex items-center px-6 py-2 text-[#f17224] hover:text-[#f17224]/80 transition font-medium">
-                            Xem tất cả orders
+                            すべての注文を表示
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>

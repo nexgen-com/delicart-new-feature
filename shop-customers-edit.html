@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Sửa Khách hàng - Shop</title>
+    <title>顧客編集 - ショップ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -34,23 +34,23 @@
                 </a>
                 <a href="shop-products-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
                     <i class="fas fa-box mr-3"></i>
-                    Sản phẩm
+                    商品
                 </a>
                 <a href="shop-orders-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
                     <i class="fas fa-shopping-cart mr-3"></i>
-                    Đơn hàng
+                    注文
                 </a>
                 <a href="shop-customers-list.html" class="flex items-center px-4 py-3 text-white bg-primary rounded-lg">
                     <i class="fas fa-users mr-3"></i>
-                    Khách hàng
+                    顧客
                 </a>
                 <a href="shop-profile-settings.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
                     <i class="fas fa-cog mr-3"></i>
-                    Cài đặt
+                    設定
                 </a>
                 <a href="shop-notice-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
                     <i class="fas fa-bullhorn mr-3"></i>
-                    Thông báo
+                    お知らせ
                 </a>
             </nav>
         </div>
@@ -62,7 +62,6 @@
         <header class="bg-white border-b">
             <div class="h-20 px-8 py-4 flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <a href="shop-customers-list.html" class="text-gray-600 hover:text-primary"><i class="fas fa-arrow-left mr-1"></i>Quay lại</a>
                 </div>
                 <!-- Dropdown profile -->
                 <div class="relative" id="profileDropdown">
@@ -76,9 +75,9 @@
                         </svg>
                     </button>
                     <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-user-edit mr-2"></i>Cập nhật profile</a>
-                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-key mr-2"></i>Đổi mật khẩu</a>
-                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-right-from-bracket mr-2"></i>Đăng xuất</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-user-edit mr-2"></i>プロフィール更新</a>
+                        <a href="#" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-key mr-2"></i>パスワード変更</a>
+                        <a href="login.html" onclick="closeProfileDropdown()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-right-from-bracket mr-2"></i>ログアウト</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +89,7 @@
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Họ và tên *</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">氏名 *</label>
                             <input 
                                 type="text" 
                                 required
@@ -99,7 +98,7 @@
                             >
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス *</label>
                             <input 
                                 type="email" 
                                 required
@@ -111,7 +110,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Số điện thoại *</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">電話番号 *</label>
                             <input 
                                 type="tel" 
                                 required
@@ -120,7 +119,7 @@
                             >
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Ngày sinh</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">生年月日</label>
                             <input 
                                 type="date" 
                                 value="1990-01-01"
@@ -130,7 +129,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Địa chỉ</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">住所</label>
                         <input 
                             type="text" 
                             value="123 Đường ABC, Quận 1, TP.HCM"
@@ -140,7 +139,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Thành phố</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">市区町村</label>
                             <input 
                                 type="text" 
                                 value="TP.HCM"
@@ -148,30 +147,33 @@
                             >
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Nhóm khách hàng</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">顧客グループ</label>
                             <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
-                                <option value="regular" selected>Thường</option>
+                                <option value="regular" selected>通常</option>
                                 <option value="vip">VIP</option>
-                                <option value="new">Mới</option>
+                                <option value="new">新規</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Ghi chú</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">備考</label>
                         <textarea 
                             rows="3"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        >Khách hàng thân thiết</textarea>
+                        >常連顧客</textarea>
                     </div>
 
-                    <div class="flex justify-end space-x-4 pt-4 border-t">
-                        <a href="shop-customers-list.html" class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
-                            Hủy
-                        </a>
-                        <button type="submit" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition">
-                            Lưu thay đổi
-                        </button>
+                    <div class="flex justify-between items-center pt-4 border-t">
+                        <a href="shop-customers-list.html" class="text-gray-600 hover:text-primary"><i class="fas fa-arrow-left mr-1"></i>戻る</a>
+                        <div class="flex space-x-4">
+                            <a href="shop-customers-list.html" class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                                キャンセル
+                            </a>
+                            <button type="submit" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition">
+                                変更を保存
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
