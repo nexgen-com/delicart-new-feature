@@ -47,10 +47,6 @@
                     <i class="fas fa-store mr-3"></i>
                     ショップ管理
                 </a>
-                <a href="admin-notice-list.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg">
-                    <i class="fas fa-bullhorn mr-3"></i>
-                    お知らせ
-                </a>
             </nav>
         </div>
     </div>
@@ -86,32 +82,15 @@
 
         <!-- Content -->
         <main class="p-4 lg:p-8">
-            <!-- Filter Section -->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">検索</label>
-                        <input 
-                            type="text" 
-                            placeholder="ショップ名、メールアドレス..."
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        >
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">状態</label>
-                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
-                            <option value="">すべて</option>
-                            <option value="active">アクティブ</option>
-                            <option value="inactive">一時停止</option>
-                        </select>
-                    </div>
-                    <div class="flex items-end">
-                        <button class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition">
-                            検索
-                        </button>
-                    </div>
-                </div>
+            <!-- Header with Add Button -->
+            <div class="mb-6 flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-gray-800">ショップ管理</h2>
+
+                <a type="button" disabled="false" class="inline-flex items-center justify-center rounded-lg transition font-medium px-4 py-2 text-sm bg-primary text-white hover:bg-opacity-90" href="/admin/shops/create"><i class="fas fa-plus mr-2"></i><!--v-if--> ショップ追加 </a>
             </div>
+            
+            <!-- Filter Section -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6"><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div><label for="input-xwa598plx" class="block text-sm font-medium text-gray-700 mb-2">検索 <!--v-if--></label><input id="input-xwa598plx" type="text" placeholder="ショップ名、メールアドレス..." class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value=""><!--v-if--></div><div><label for="select-vweyrnnmk" class="block text-sm font-medium text-gray-700 mb-2">状態 <!--v-if--></label><select id="select-vweyrnnmk" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value=""><!--v-if--><option value="">すべて</option><option value="active">アクティブ</option><option value="inactive">一時停止</option></select><!--v-if--></div><div class="flex items-end gap-2"><button type="button" class="inline-flex items-center justify-center rounded-lg transition font-medium px-4 py-2 text-sm bg-primary text-white hover:bg-opacity-90 !py-3 flex-1"><i class="fas fa-search mr-2"></i><!--v-if--> 検索 </button><button type="button" class="inline-flex items-center justify-center rounded-lg transition font-medium px-4 py-2 text-sm border border-gray-300 text-gray-700 hover:bg-gray-50 !py-3"><i class="fas fa-times mr-2"></i><!--v-if--> クリア </button></div></div></div>
 
             <!-- Table -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">

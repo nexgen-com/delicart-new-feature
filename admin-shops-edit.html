@@ -83,89 +83,11 @@
             </div>
         </header>
 
+
         <!-- Content -->
         <main class="p-4 lg:p-8">
-            <div class="bg-white rounded-lg shadow-md p-8 max-w-3xl">
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">ショップ名 *</label>
-                            <input 
-                                type="text" 
-                                required
-                                value="Shop ABC"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                            >
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                            <input 
-                                type="email" 
-                                required
-                                value="abc@example.com"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">電話番号 *</label>
-                            <input 
-                                type="tel" 
-                                required
-                                value="0123456789"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                            >
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">状態</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none">
-                                <option value="active" selected>アクティブ</option>
-                                <option value="inactive">一時停止</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">住所</label>
-                        <input 
-                            type="text" 
-                            value="123 Đường ABC, Quận 1, TP.HCM"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        >
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">市区町村</label>
-                        <input 
-                            type="text" 
-                            value="TP.HCM"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        >
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">説明</label>
-                        <textarea 
-                            rows="4"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        >Shop chuyên bán đồ ăn nhanh và đồ uống tươi ngon. Phục vụ 24/7.</textarea>
-                    </div>
-
-                    <div class="flex justify-end space-x-4 pt-4 border-t">
-                        <a href="admin-shops-detail.html" class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
-                            <i class="fas fa-arrow-left mr-1"></i>戻る
-                        </a>
-                        <a href="admin-shops-detail.html" class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
-                            キャンセル
-                        </a>
-                        <button type="submit" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-opacity-90 transition">
-                            変更を保存
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <div class="mb-6 flex justify-between items-center"><h2 class="text-2xl font-bold text-gray-800">ショップ情報を更新</h2></div>
+            <div class="bg-white rounded-lg shadow-md p-8"><form class="space-y-6"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label for="input-s7druo9pi" class="block text-sm font-medium text-gray-700 mb-2">ショップ名 <span class="text-red-500">*</span></label><input id="input-s7druo9pi" type="text" placeholder="ショップ名を入力" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value="Delicious Ramen Shop"><!--v-if--></div><div><label for="input-y8hx7aujs" class="block text-sm font-medium text-gray-700 mb-2">Email <span class="text-red-500">*</span></label><input id="input-y8hx7aujs" type="email" placeholder="example@email.com" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value="shop1@obento-delicart.net"><!--v-if--></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label for="input-z9bv5zdx1" class="block text-sm font-medium text-gray-700 mb-2">電話番号 <!--v-if--></label><input id="input-z9bv5zdx1" type="tel" placeholder="0123456789" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value="0901234567"><!--v-if--></div><div><label for="input-ar0wkvtxk" class="block text-sm font-medium text-gray-700 mb-2">パスワード <!--v-if--></label><input id="input-ar0wkvtxk" type="password" placeholder="変更する場合のみ入力" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value=""><!--v-if--></div></div><div class="flex flex-wrap items-center gap-6"><div class="flex items-center cursor-pointer hover:opacity-80 transition"><input id="status" type="checkbox" checked="" class="w-6 h-6 text-primary border-gray-300 rounded-md focus:ring-primary cursor-pointer"><label for="status" class="ml-2 text-sm font-medium text-gray-700 cursor-pointer"> アクティブ </label></div><div class="flex items-center cursor-pointer hover:opacity-80 transition"><input id="allow_debit" type="checkbox" class="w-6 h-6 text-primary border-gray-300 rounded-md focus:ring-primary cursor-pointer"><label for="allow_debit" class="ml-2 text-sm font-medium text-gray-700 cursor-pointer"> 月末支払いを許可 </label></div><div class="flex items-center cursor-pointer hover:opacity-80 transition"><input id="allow_online_payment" type="checkbox" class="w-6 h-6 text-primary border-gray-300 rounded-md focus:ring-primary cursor-pointer"><label for="allow_online_payment" class="ml-2 text-sm font-medium text-gray-700 cursor-pointer"> オンライン決済を許可 </label></div></div><!--v-if--><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label for="input-e9ubnvohn" class="block text-sm font-medium text-gray-700 mb-2">住所 <!--v-if--></label><input id="input-e9ubnvohn" type="text" placeholder="住所 shop" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value="123 Main Street, Shibuya"><!--v-if--></div><div><label for="input-erinl4fzd" class="block text-sm font-medium text-gray-700 mb-2">市区町村 <!--v-if--></label><input id="input-erinl4fzd" type="text" placeholder="市区町村" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition border-gray-300" value="Tokyo"><!--v-if--></div></div><div><label for="input-co6eod2zd" class="block text-sm font-medium text-gray-700 mb-2">説明 <!--v-if--></label><textarea id="input-co6eod2zd" placeholder="" rows="4" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition resize-none border-gray-300" value="Authentic Japanese ramen shop serving traditional flavors."></textarea><!--v-if--></div><div class="flex justify-end space-x-4 pt-4"><a type="button" disabled="false" class="inline-flex items-center justify-center rounded-lg transition font-medium px-6 py-3 text-base border border-gray-300 text-gray-700 hover:bg-gray-50" href="/admin/shops/2"><i class="fas fa-eye mr-2"></i><!--v-if--> 詳細 </a><a type="button" disabled="false" class="inline-flex items-center justify-center rounded-lg transition font-medium px-6 py-3 text-base border border-gray-300 text-gray-700 hover:bg-gray-50" href="/admin/shops"><i class="fas fa-arrow-left mr-2"></i><!--v-if--> キャンセル </a><button type="submit" class="inline-flex items-center justify-center rounded-lg transition font-medium px-6 py-3 text-base bg-primary text-white hover:bg-opacity-90"><i class="fas fa-save mr-2"></i><!--v-if--> 変更を保存 </button></div></form></div>
         </main>
     </div>
 
